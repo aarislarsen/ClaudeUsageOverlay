@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>ClaudeUsageOverlay</AssemblyName>
+    <RootNamespace>ClaudeUsageOverlay</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <!-- InvariantGlobalization must stay off: WPF's font cache needs the full culture data
+         and throws in MS.Internal.FontCache during startup without it. -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <!-- Enabling UseWindowsForms adds System.Windows.Forms and System.Drawing to the implicit
+       usings of every file, where they collide with the WPF types of the same name
+       (Application, UserControl, Brush, Rectangle, KeyEventArgs). Only TrayIconHost.cs needs
+       them, and it imports them itself. -->
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <!-- Publish defaults. See README.md for the exact publish commands: one build needs the
+       .NET 8 runtime installed on the target machine, the other is fully self contained. -->
+  <PropertyGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
+</Project>

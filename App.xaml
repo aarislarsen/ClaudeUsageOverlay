@@ -1,0 +1,54 @@
+<Application x:Class="ClaudeUsageOverlay.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+
+        <!-- Palette. Dark, low-chroma ground so the numbers are the brightest thing on
+             screen; one accent hue carries the meaning. -->
+        <Color x:Key="PanelColor">#E60A0E12</Color>
+        <Color x:Key="EdgeColor">#332F97C4</Color>
+
+        <SolidColorBrush x:Key="PanelBrush" Color="{StaticResource PanelColor}" />
+        <SolidColorBrush x:Key="EdgeBrush" Color="{StaticResource EdgeColor}" />
+
+        <SolidColorBrush x:Key="TextBrush" Color="#D6E4EC" />
+        <SolidColorBrush x:Key="DimTextBrush" Color="#6B7F8C" />
+        <SolidColorBrush x:Key="TrackBrush" Color="#1E2A33" />
+
+        <!-- Four bands, quietest first. The low band is a deep blue rather than a bright
+             cyan: most of the time the panel is reporting that nothing is wrong, and that
+             should never read as an alert. -->
+        <SolidColorBrush x:Key="CalmBrush" Color="#2F97C4" />
+        <SolidColorBrush x:Key="NormalBrush" Color="#3FBF74" />
+        <SolidColorBrush x:Key="WarningBrush" Color="#F2872E" />
+        <SolidColorBrush x:Key="CriticalBrush" Color="#FF5065" />
+
+        <FontFamily x:Key="MonoFont">Cascadia Mono, Consolas, Segoe UI Mono, Courier New</FontFamily>
+
+        <!-- Row label: quiet, wide-tracked, never competes with the number. -->
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource MonoFont}" />
+            <Setter Property="FontSize" Value="10.5" />
+            <Setter Property="Foreground" Value="{StaticResource DimTextBrush}" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        </Style>
+
+        <!-- The number. Largest element in the panel; it is what the user came for. -->
+        <Style x:Key="PercentStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource MonoFont}" />
+            <Setter Property="FontSize" Value="19" />
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+
+        <Style x:Key="MetaStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource MonoFont}" />
+            <Setter Property="FontSize" Value="10.5" />
+            <Setter Property="Foreground" Value="{StaticResource DimTextBrush}" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        </Style>
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "ifi7xMMhCnc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dragon\\Desktop\\CUNT\\ClaudeUsageOverlay.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dragon\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.29\\microsoft.net.illink.tasks.8.0.29.nupkg.sha512",
+    "C:\\Users\\dragon\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.29\\microsoft.netcore.app.runtime.win-x64.8.0.29.nupkg.sha512",
+    "C:\\Users\\dragon\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.29\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.29.nupkg.sha512",
+    "C:\\Users\\dragon\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.29\\microsoft.aspnetcore.app.runtime.win-x64.8.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

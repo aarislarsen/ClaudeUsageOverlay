@@ -1,0 +1,2 @@
+C:\Users\dragon\Desktop\CUNT\bin\Release\net8.0-windows\win-x64\publish\ClaudeUsageOverlay.pdb
+C:\Users\dragon\Desktop\CUNT\bin\Release\net8.0-windows\win-x64\publish\ClaudeUsageOverlay.exe

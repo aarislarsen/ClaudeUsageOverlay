@@ -1,0 +1,73 @@
+<Window x:Class="ClaudeUsageOverlay.OverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Claude Usage"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        Topmost="True"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        Focusable="False"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True">
+
+    <!-- Everything scales from one transform so the whole panel keeps its proportions. -->
+    <Grid x:Name="ScaleHost">
+        <Grid.LayoutTransform>
+            <ScaleTransform x:Name="PanelScale" ScaleX="1" ScaleY="1" />
+        </Grid.LayoutTransform>
+
+        <Border x:Name="Panel"
+                Background="{StaticResource PanelBrush}"
+                BorderBrush="{StaticResource EdgeBrush}"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="17,14,17,13">
+
+            <StackPanel>
+
+                <!-- Header. Identity on the left, live state on the right, both always
+                     present so the panel never has to be interrogated. -->
+                <Grid Margin="0,0,0,12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle x:Name="Pip"
+                               Grid.Column="0"
+                               Width="3"
+                               Height="10"
+                               RadiusX="1.5"
+                               RadiusY="1.5"
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,0"
+                               Fill="{StaticResource CalmBrush}" />
+
+                    <TextBlock x:Name="TitleText"
+                               Grid.Column="1"
+                               Style="{StaticResource LabelStyle}"
+                               VerticalAlignment="Center"
+                               Text="Claude" />
+
+                    <TextBlock x:Name="StateText"
+                               Grid.Column="2"
+                               Style="{StaticResource MetaStyle}"
+                               VerticalAlignment="Center" />
+                </Grid>
+
+                <!-- Metrics run left to right: session first, then the wider windows. -->
+                <StackPanel x:Name="RowHost" Orientation="Horizontal" />
+
+                <!-- Footer: when the numbers were last true. -->
+                <TextBlock x:Name="FooterText"
+                           Style="{StaticResource MetaStyle}"
+                           Opacity="0.75"
+                           Margin="0,12,0,0" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
