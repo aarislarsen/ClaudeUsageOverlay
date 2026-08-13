@@ -1,21 +1,11 @@
 # Claude Usage Overlay
 
+<img width="468" height="157" alt="image" src="https://github.com/user-attachments/assets/fc6e2d70-6bd0-4dce-ad4c-8f4246a631d0" />
+
 A small always-on-top panel for Windows 11 that shows how much of your Claude plan you have
 used right now: the rolling 5-hour session window, the 7-day all-models window, and — if
 your plan has one — the separate weekly Opus window. It lives in the system tray, updates
 itself, and never asks you for anything.
-
-```
-┌───────────────────────────────────────────────────────────────┐
-│ ▍ Claude                                                 Live │
-│                                                               │
-│ Session                    4% │ All models               18%  │
-│ ▰▰░░░░░░░░░░░░░░░░░░░░░░░░░░░ │ ▰▰▰▰▰░░░░░░░░░░░░░░░░░░░░░░░░  │
-│ Reset 02:20  ·  in 2h 44m     │ Reset Sat 09:00  ·  in 5d 6h   │
-│                                                               │
-│ Updated 21:36                                                 │
-└───────────────────────────────────────────────────────────────┘
-```
 
 ---
 
